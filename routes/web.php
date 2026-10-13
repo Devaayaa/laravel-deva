@@ -1,10 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MatakuliahController;
+use App\Http\Controllers\QuestionController;
 
-Route::get('/mahasiswa/{param1}', [MahasiswaController::class, 'show']);
+Route::post('question/store', [QuestionController::class, 'store'])
+    ->name('question.store');
+
+Route::get('/home',[HomeController::class , 'index']);
 
 Route::get('/matakuliah', [MatakuliahController::class, 'index']);
 

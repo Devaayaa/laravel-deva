@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MatakuliahController;
 use App\Http\Controllers\QuestionController;
+
+Route::get('dashboard', [DashboardController::class, 'index']) ->name('dashboard');
 
 Route::post('question/store', [QuestionController::class, 'store'])
     ->name('question.store');
